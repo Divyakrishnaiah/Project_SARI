@@ -44,12 +44,21 @@ def commonelements(inc,exc):
 
     for i in incwords:
         for j in excwords:
-            if re.sub('[^a-zA-Z0-9]','',i).casefold() in re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold():
+#             if re.sub('[^a-zA-Z0-9]','',i).casefold() in re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold():
+#                 commonItems.append(j)
+#             elif re.sub('[^a-zA-Z0-9]','',i).casefold() in re.sub('[^a-zA-Z0-9]','',j).casefold()+'s' and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold()+'s':
+#                 commonItems.append(j)
+#             elif re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' in re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
+#                 commonItems.append(j)
+            if re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold():
                 commonItems.append(j)
-            elif re.sub('[^a-zA-Z0-9]','',i).casefold() in re.sub('[^a-zA-Z0-9]','',j).casefold()+'s' and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold()+'s':
+            elif re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold()+'s' and re.sub('[^a-zA-Z0-9]','',i).casefold() == re.sub('[^a-zA-Z0-9]','',j).casefold()+'s':
                 commonItems.append(j)
-            elif re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' in re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
+            elif re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold() and re.sub('[^a-zA-Z0-9]','',i).casefold()+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
                 commonItems.append(j)
+            elif re.sub('[^a-zA-Z0-9]','',i).casefold()[:len(re.sub('[^a-zA-Z0-9]','',j).casefold())-1]+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
+                commonItems.append(j)
+              
  
     #print(list(set(commonItems)))
     return(list(set(commonItems)))
