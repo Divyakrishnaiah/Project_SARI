@@ -58,6 +58,14 @@ def commonelements(inc,exc):
                 commonItems.append(j)
             elif re.sub('[^a-zA-Z0-9]','',i).casefold()[:len(re.sub('[^a-zA-Z0-9]','',j).casefold())-1]+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
                 commonItems.append(j)
+            elif re.sub('[^a-zA-Z0-9]','',i).casefold()[-len(re.sub('[^a-zA-Z0-9]','',j).casefold())+1:]+'s' == re.sub('[^a-zA-Z0-9]','',j).casefold():
+                commonItems.append(j)
+            elif re.sub('[^a-zA-Z0-9]','',j).casefold() in re.sub('[^a-zA-Z0-9]','',i).casefold():
+                commonItems.append(j)
+            elif re.sub('[^a-zA-Z0-9]','',j).casefold() in re.sub('[^a-zA-Z0-9]','',i).casefold():
+                commonItems.append(j)
+            elif re.sub('[^a-zA-Z0-9]','',j).casefold().strip("s") in re.sub('[^a-zA-Z0-9]','',i).casefold():
+                commonItems.append(j) 
               
  
     #print(list(set(commonItems)))
